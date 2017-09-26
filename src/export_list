@@ -1,0 +1,4 @@
+_pam_sm_acct_mgmt
+_pam_sm_authenticate
+_pam_sm_chauthtok
+_pam_sm_setcred
