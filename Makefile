@@ -5,11 +5,9 @@ DESTINATION := /usr/local/lib/pam
 
 $(LIBRARY_NAME): src/Bridging-Header.h src/main.swift
 	$(XCODE)/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc \
-		-target x86_64-apple-macosx10.13 \
-		-sdk $(XCODE)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk \
+		-sdk $(XCODE)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk \
 		-emit-library \
-		-swift-version 4 \
-		-static-stdlib \
+		-swift-version 5 \
 		-O \
 		-whole-module-optimization \
 		-Xlinker -S \
@@ -35,4 +33,4 @@ uninstall:
 
 .PHONY: clean
 clean:
-	rm $(LIBRARY_NAME)
+	rm -f $(LIBRARY_NAME)
